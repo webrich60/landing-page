@@ -96,6 +96,14 @@
 
     <div class="max-w-2xl mx-auto bg-white min-h-screen shadow-2xl relative overflow-hidden">
         
+        <!-- 右上 管理者ツール用ボタン (設定アイコン) -->
+        <button onclick="openPasswordPrompt()" class="absolute top-4 right-4 z-40 bg-white bg-opacity-70 text-gray-400 hover:text-gray-600 p-2 rounded-full shadow-sm hover:shadow transition border border-gray-100" title="管理者ツール">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+        </button>
+
         <!-- ヘッダー装飾 -->
         <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-green-300 to-transparent opacity-30 pointer-events-none"></div>
 
@@ -112,7 +120,7 @@
 
             <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mt-6 mb-8 animate-float">
                 <div class="absolute inset-0 bg-green-200 rounded-full opacity-20 blur-xl"></div>
-                <!-- トップ画像 -->
+                <!-- トップ画像 (外部URLを削除し、日本語入りSVGデータURLに変更) -->
                 <img id="hoya_main_img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%234ade80' rx='40'/%3E%3Ctext x='200' y='200' font-family='sans-serif' font-size='40' fill='%23ffffff' font-weight='bold' text-anchor='middle' dominant-baseline='central'%3Eトップ画像%3C/text%3E%3C/svg%3E" alt="福井弁の恐竜くん" class="relative z-10 w-full h-full object-contain drop-shadow-xl">
                 <!-- 吹き出し -->
                 <div id="hoya_speech_bubble" class="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border-2 border-green-200 transform rotate-6 z-20 speech-bubble">
@@ -306,17 +314,9 @@
             </a>
         </div>
 
-        <footer class="bg-green-800 text-green-100 text-center py-6 text-sm relative">
+        <footer class="bg-green-800 text-green-100 text-center py-6 text-sm">
             <p>&copy; 2026 WEBRICH. All rights reserved.</p>
             <button onclick="showCopyright()" class="mt-2 text-green-300 hover:text-white underline text-xs">著作権について</button>
-            
-            <!-- 右下 管理者ツール用ボタン (隠し設定アイコン) -->
-            <button onclick="openPasswordPrompt()" class="absolute bottom-4 right-4 z-40 text-green-700 hover:text-green-300 p-2 rounded-full transition" title="管理者ツール">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-            </button>
         </footer>
 
         <!-- 右下固定購入ボタン (FAB) ラッパー: メインコンテンツ幅の右下に配置 -->
@@ -477,7 +477,7 @@
             { id: 's4', txt: 'はよしねま', meaning: '早くして' },
             { id: 's5', txt: 'だんねーよ',   meaning: '大丈夫だよ' },
             { id: 's6', txt: 'ほっこりしたわ', meaning: '安心した' },
-            { id: 's7', txt: 'つるつるいっぱい',       meaning: '並々いっぱい' },
+            { id: 's7', txt: 'つるつるいっぱい',      meaning: '並々いっぱい' },
             { id: 's8', txt: 'あかんけ', meaning: 'ダメだよ' }
         ];
 
