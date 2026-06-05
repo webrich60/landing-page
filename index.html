@@ -80,7 +80,6 @@
 </head>
 <body class="antialiased">
 
-    <!-- クイズ連携バナー -->
     <div class="bg-yellow-400 text-yellow-900 text-center py-3 px-4 font-bold text-sm sm:text-base shadow-md relative z-20">
         <p>🦖 福井県マスター認定！あなたの福井愛は本物です！</p>
         <p class="mt-1 text-xs sm:text-sm">次は福井弁で会話してみませんか？ <a href="#buy-section" class="underline decoration-2 underline-offset-2 hover:text-green-800 transition">【福井弁の恐竜くんを見る】</a></p>
@@ -88,10 +87,8 @@
 
     <div class="max-w-2xl mx-auto bg-white min-h-screen shadow-2xl relative overflow-hidden">
         
-        <!-- ヘッダー装飾 -->
         <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-green-300 to-transparent opacity-30 pointer-events-none"></div>
 
-        <!-- 1. ファーストビュー -->
         <header class="pt-12 pb-8 px-6 text-center relative z-10 fade-in-target">
             <h1 class="text-3xl sm:text-4xl font-black text-green-600 tracking-tight leading-tight mb-4 font-cute">
                 福井出身の人なら<br class="sm:hidden">思わずニヤッ！
@@ -105,23 +102,19 @@
             <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mt-6 mb-8 animate-float">
                 <div class="absolute inset-0 bg-green-200 rounded-full opacity-20 blur-xl"></div>
                 
-                <!-- 【画像設定】 トップ画像 (パスを同じ階層に変更) -->
-                <img src="./top_main.png" alt="福井弁の恐竜くん" class="relative z-10 w-full h-full object-contain drop-shadow-xl" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 400\'%3E%3Crect width=\'400\' height=\'400\' fill=\'%234ade80\' rx=\'40\'/%3E%3Ctext x=\'200\' y=\'200\' font-family=\'sans-serif\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3E画像がありません%3C/text%3E%3Ctext x=\'200\' y=\'240\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23ffffff\' text-anchor=\'middle\'%3E./top_main.png%3C/text%3E%3C/svg%3E'">
+                <img src="./images/top_main.png" alt="福井弁の恐竜くん" class="relative z-10 w-full h-full object-contain drop-shadow-xl" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 400\'%3E%3Crect width=\'400\' height=\'400\' fill=\'%234ade80\' rx=\'40\'/%3E%3Ctext x=\'200\' y=\'200\' font-family=\'sans-serif\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3E画像がありません%3C/text%3E%3Ctext x=\'200\' y=\'240\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23ffffff\' text-anchor=\'middle\'%3E./images/top_main.png%3C/text%3E%3C/svg%3E'">
                 
-                <!-- 吹き出し -->
                 <div class="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border-2 border-green-200 transform rotate-6 z-20 speech-bubble">
                     <p class="font-cute font-bold text-gray-700 text-lg">ほやほや！</p>
                 </div>
             </div>
 
-            <!-- 購入ボタン 1 -->
             <a href="https://store.line.me/stickershop/product/XXXXXXX/ja" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-lg py-4 px-10 rounded-full transition shadow-lg transform hover:scale-105 w-full sm:w-auto">
                 <span class="mr-2 text-2xl">🦖</span>LINEで使ってみる
             </a>
             <p class="text-xs text-gray-500 mt-3 font-bold">LINE STOREへ移動します</p>
         </header>
 
-        <!-- 2. スタンプ一覧 (人気の8個) -->
         <section class="py-10 px-6 bg-yellow-50 relative fade-in-target">
             
             <div class="text-center mb-8">
@@ -134,61 +127,52 @@
                 </p>
             </div>
 
-            <!-- スタンプグリッド -->
             <div class="grid grid-cols-2 gap-4 sm:gap-6">
                 
-                <!-- スタンプ1 (パスを同じ階層に変更) -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_1.png" alt="ほやほや！" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_1.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_1.png" alt="ほやほや！" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_1.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">ほやほや！</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">そうそう！</p>
                 </div>
 
-                <!-- スタンプ2 -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_2.png" alt="きのどくなの" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_2.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_2.png" alt="きのどくなの" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_2.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">きのどくなの</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">ありがとう</p>
                 </div>
 
-                <!-- スタンプ3 -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_3.png" alt="おえ〜" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_3.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_3.png" alt="おえ〜" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_3.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">おえ〜</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">嫌だ〜</p>
                 </div>
 
-                <!-- スタンプ4 -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_4.png" alt="はよしねま" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_4.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_4.png" alt="はよしねま" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_4.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">はよしねま</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">早くして</p>
                 </div>
 
-                <!-- スタンプ5 -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_5.png" alt="だんねーよ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_5.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_5.png" alt="だんねーよ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_5.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">だんねーよ</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">大丈夫だよ</p>
                 </div>
 
-                <!-- スタンプ6 -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_6.png" alt="ほっこりしたわ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_6.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_6.png" alt="ほっこりしたわ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_6.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">ほっこりしたわ</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">安心した</p>
                 </div>
 
-                <!-- スタンプ7 -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_7.png" alt="つるつるいっぱい" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_7.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_7.png" alt="つるつるいっぱい" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_7.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">つるつるいっぱい</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">並々いっぱい</p>
                 </div>
 
-                <!-- スタンプ8 -->
                 <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img src="./stamp_8.png" alt="あかんけ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_8.png%3C/text%3E%3C/svg%3E'">
+                    <img src="./images/stamp_8.png" alt="あかんけ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_8.png%3C/text%3E%3C/svg%3E'">
                     <h3 class="font-bold text-gray-800 text-sm sm:text-base">あかんけ</h3>
                     <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">ダメだよ</p>
                 </div>
@@ -197,25 +181,22 @@
 
             <div class="mt-8 text-center" id="buy-section">
                 <p class="text-lg font-bold text-green-700 mb-4">
-                    LINEで毎日使える厳選19種類✨<br>
+                    LINEで毎日使える40種類✨ <span class="text-sm font-normal text-gray-600">（一部同じ言葉あり）</span><br>
                     <span class="text-sm text-gray-500">（第2弾も制作中！）</span>
                 </p>
                 
-                <!-- ベネフィットリスト -->
                 <ul class="text-left inline-block space-y-2 mb-6 font-bold text-gray-700 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
                     <li>💬 毎日の会話で使いやすい</li>
                     <li>👓 鯖江メガネの恐竜くん</li>
                     <li>🦀 懐かしい福井弁満載</li>
                 </ul>
                 <br>
-                <!-- 購入ボタン 2 -->
                 <a href="https://store.line.me/stickershop/product/XXXXXXX/ja" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-lg py-4 px-10 rounded-full transition shadow-lg transform hover:scale-105 w-full sm:w-auto">
                     <span class="mr-2 text-2xl">🦖</span>LINEで使う
                 </a>
             </div>
         </section>
 
-        <!-- 3. トーク利用例 -->
         <section class="py-10 px-6 fade-in-target">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 relative inline-block left-1/2 -translate-x-1/2">
                 <span class="relative z-10">トークで使うとこんな感じ！</span>
@@ -223,11 +204,9 @@
             </h2>
 
             <div class="bg-[#74a1c6] p-4 rounded-3xl max-w-sm mx-auto shadow-inner relative overflow-hidden">
-                <!-- LINE風背景 -->
                 <div class="absolute inset-0 bg-white opacity-10"></div>
                 
                 <div class="space-y-4 relative z-10">
-                    <!-- 相手 -->
                     <div class="flex items-start">
                         <div class="bg-gray-300 w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-gray-500 font-bold text-sm">友</div>
                         <div class="ml-2 bg-white rounded-2xl rounded-tl-none p-3 max-w-[70%] shadow-sm text-sm font-medium">
@@ -235,18 +214,15 @@
                         </div>
                     </div>
 
-                    <!-- 恐竜くん (ほやほや！) -->
                     <div class="flex flex-col items-end">
                         <div class="flex items-end max-w-[70%]">
                              <div class="text-[10px] text-gray-100 mr-1 pb-1">既読<br>19:00</div>
                              <div class="bg-transparent rounded-2xl p-1 relative w-24 h-24">
-                                <!-- 【画像設定】 トーク画像1 (パスを同じ階層に変更) -->
-                                <img src="./chat_1.png" alt="ほやほや！" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%234ade80\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_1.png%3C/text%3E%3C/svg%3E'">
+                                <img src="./images/chat_1.png" alt="ほやほや！" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%234ade80\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_1.png%3C/text%3E%3C/svg%3E'">
                              </div>
                         </div>
                     </div>
 
-                    <!-- 相手 -->
                     <div class="flex items-start mt-4">
                         <div class="bg-gray-300 w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-gray-500 font-bold text-sm">友</div>
                         <div class="ml-2 bg-white rounded-2xl rounded-tl-none p-3 max-w-[70%] shadow-sm text-sm font-medium">
@@ -254,18 +230,15 @@
                         </div>
                     </div>
 
-                    <!-- 恐竜くん (きのどくなの) -->
                     <div class="flex flex-col items-end">
                         <div class="flex items-end max-w-[70%]">
                              <div class="text-[10px] text-gray-100 mr-1 pb-1">既読<br>19:05</div>
                              <div class="bg-transparent rounded-2xl p-1 relative w-24 h-24">
-                                <!-- 【画像設定】 トーク画像2 -->
-                                <img src="./chat_2.png" alt="きのどくなの" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23fbcfe8\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_2.png%3C/text%3E%3C/svg%3E'">
+                                <img src="./images/chat_2.png" alt="きのどくなの" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23fbcfe8\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_2.png%3C/text%3E%3C/svg%3E'">
                              </div>
                         </div>
                     </div>
 
-                     <!-- 相手 -->
                      <div class="flex items-start mt-4">
                         <div class="bg-gray-300 w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-gray-500 font-bold text-sm">友</div>
                         <div class="ml-2 bg-white rounded-2xl rounded-tl-none p-3 max-w-[70%] shadow-sm text-sm font-medium">
@@ -273,13 +246,11 @@
                         </div>
                     </div>
 
-                    <!-- 恐竜くん (はよしねま) -->
                     <div class="flex flex-col items-end">
                         <div class="flex items-end max-w-[70%]">
                              <div class="text-[10px] text-gray-100 mr-1 pb-1">既読<br>21:30</div>
                              <div class="bg-transparent rounded-2xl p-1 relative w-24 h-24 animate-bounce-subtle">
-                                <!-- 【画像設定】 トーク画像3 -->
-                                <img src="./chat_3.png" alt="はよしねま" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23fca5a5\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_3.png%3C/text%3E%3C/svg%3E'">
+                                <img src="./images/chat_3.png" alt="はよしねま" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23fca5a5\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_3.png%3C/text%3E%3C/svg%3E'">
                              </div>
                         </div>
                     </div>
@@ -287,14 +258,12 @@
             </div>
             
             <div class="mt-10 text-center">
-                <!-- 購入ボタン 3 -->
                 <a href="https://store.line.me/stickershop/product/XXXXXXX/ja" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-lg py-4 px-10 rounded-full transition shadow-lg transform hover:scale-105 w-full sm:w-auto">
                     <span class="mr-2 text-2xl">🦖</span>LINEで使う
                 </a>
             </div>
         </section>
 
-        <!-- 4. 福井弁辞典 (SEO用) -->
         <section class="py-10 px-6 bg-gray-50 fade-in-target">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">
                 📖 収録されている福井弁辞典
@@ -327,7 +296,6 @@
             </div>
         </section>
 
-        <!-- 5. プロフィール -->
         <section class="py-10 px-6 fade-in-target">
             <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 relative inline-block left-1/2 -translate-x-1/2">
                 <span class="relative z-10">福井弁の恐竜くん「ほやほや」って？</span>
@@ -335,8 +303,7 @@
             </h2>
             <div class="bg-white border-4 border-green-100 rounded-3xl p-6 shadow-sm flex flex-col md:flex-row items-center gap-6">
                 <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-yellow-100 flex-shrink-0 border-4 border-white shadow-md overflow-hidden relative">
-                     <!-- 【画像設定】 プロフィール画像 (パスを同じ階層に変更) -->
-                     <img src="./profile.png" alt="ほやほや" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 300\'%3E%3Crect width=\'300\' height=\'300\' fill=\'%23fde047\'/%3E%3Ctext x=\'150\' y=\'140\' font-family=\'sans-serif\' font-size=\'24\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3E画像なし%3C/text%3E%3Ctext x=\'150\' y=\'170\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' text-anchor=\'middle\'%3E./profile.png%3C/text%3E%3C/svg%3E'">
+                     <img src="./images/profile.png" alt="ほやほや" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 300\'%3E%3Crect width=\'300\' height=\'300\' fill=\'%23fde047\'/%3E%3Ctext x=\'150\' y=\'140\' font-family=\'sans-serif\' font-size=\'24\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3E画像なし%3C/text%3E%3Ctext x=\'150\' y=\'170\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' text-anchor=\'middle\'%3E./images/profile.png%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="flex-1">
                     <ul class="space-y-3 text-sm md:text-base text-gray-700 font-medium">
@@ -350,10 +317,9 @@
             </div>
         </section>
 
-        <!-- フッター直前の最後の一押し -->
         <div class="py-12 text-center px-6 bg-gradient-to-b from-transparent to-green-50 fade-in-target">
             <p class="text-xl font-bold text-gray-800 mb-2">福井県の魅力が詰まった</p>
-            <p class="text-lg text-gray-600 mb-6">ゆるかわ恐竜スタンプ 厳選19種類</p>
+            <p class="text-lg text-gray-600 font-bold mb-6">ゆるかわ恐竜スタンプ 40種類 <span class="text-sm font-normal text-gray-500">（一部同じ言葉あり）</span></p>
             <a href="https://store.line.me/stickershop/product/XXXXXXX/ja" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-xl py-5 px-12 rounded-full transition shadow-xl transform hover:scale-105 w-full sm:w-auto">
                 <span class="mr-2 text-3xl">🦖</span>LINEで使う
             </a>
@@ -364,7 +330,6 @@
             <button onclick="showCopyright()" class="mt-2 text-green-300 hover:text-white underline text-xs">著作権について</button>
         </footer>
 
-        <!-- 右下固定購入ボタン (FAB) ラッパー -->
         <div class="fixed bottom-4 right-4 sm:right-auto sm:left-[calc(50%+16rem)] md:left-[calc(50%+20rem)] lg:left-[calc(50%+20rem)] z-40 animate-float-btn-mobile sm:translate-x-0">
             <a href="https://store.line.me/stickershop/product/XXXXXXX/ja" target="_blank" rel="noopener" class="bg-[#06C755] text-white font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5 hover:bg-[#05b34c] transition border border-white text-xs sm:text-sm opacity-90 hover:opacity-100">
                 <span class="text-sm sm:text-base">🦖</span> LINEで使う
@@ -372,7 +337,6 @@
         </div>
     </div>
 
-    <!-- 著作権モーダル -->
     <div id="copyright-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
         <div class="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="copyright-modal-content">
             <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">著作権について</h3>
@@ -386,7 +350,6 @@
         </div>
     </div>
 
-    <!-- スクリプト (フェードインアニメーションとモーダル制御のみ) -->
     <script>
         // フェードインアニメーションの初期化
         window.onload = () => {
