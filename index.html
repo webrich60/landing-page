@@ -65,16 +65,8 @@
             display: block;
             width: 0;
         }
-        
-        /* 隠し管理画面用 */
-        #admin-panel {
-            display: none;
-        }
-        #admin-panel.active {
-            display: block;
-        }
 
-        /* ゆず追加：フェードインアニメーション用クラス */
+        /* フェードインアニメーション用クラス */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
@@ -96,14 +88,6 @@
 
     <div class="max-w-2xl mx-auto bg-white min-h-screen shadow-2xl relative overflow-hidden">
         
-        <!-- 右上 管理者ツール用ボタン (設定アイコン) -->
-        <button onclick="openPasswordPrompt()" class="absolute top-4 right-4 z-40 bg-white bg-opacity-70 text-gray-400 hover:text-gray-600 p-2 rounded-full shadow-sm hover:shadow transition border border-gray-100" title="管理者ツール">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-        </button>
-
         <!-- ヘッダー装飾 -->
         <div class="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-green-300 to-transparent opacity-30 pointer-events-none"></div>
 
@@ -120,10 +104,12 @@
 
             <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto mt-6 mb-8 animate-float">
                 <div class="absolute inset-0 bg-green-200 rounded-full opacity-20 blur-xl"></div>
-                <!-- トップ画像 (外部URLを削除し、日本語入りSVGデータURLに変更) -->
-                <img id="hoya_main_img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%234ade80' rx='40'/%3E%3Ctext x='200' y='200' font-family='sans-serif' font-size='40' fill='%23ffffff' font-weight='bold' text-anchor='middle' dominant-baseline='central'%3Eトップ画像%3C/text%3E%3C/svg%3E" alt="福井弁の恐竜くん" class="relative z-10 w-full h-full object-contain drop-shadow-xl">
+                
+                <!-- 【画像設定】 トップ画像 (パスを同じ階層に変更) -->
+                <img src="./top_main.png" alt="福井弁の恐竜くん" class="relative z-10 w-full h-full object-contain drop-shadow-xl" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 400 400\'%3E%3Crect width=\'400\' height=\'400\' fill=\'%234ade80\' rx=\'40\'/%3E%3Ctext x=\'200\' y=\'200\' font-family=\'sans-serif\' font-size=\'30\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3E画像がありません%3C/text%3E%3Ctext x=\'200\' y=\'240\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%23ffffff\' text-anchor=\'middle\'%3E./top_main.png%3C/text%3E%3C/svg%3E'">
+                
                 <!-- 吹き出し -->
-                <div id="hoya_speech_bubble" class="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border-2 border-green-200 transform rotate-6 z-20 speech-bubble">
+                <div class="absolute -top-4 -right-4 bg-white px-5 py-3 rounded-2xl shadow-lg border-2 border-green-200 transform rotate-6 z-20 speech-bubble">
                     <p class="font-cute font-bold text-gray-700 text-lg">ほやほや！</p>
                 </div>
             </div>
@@ -149,8 +135,64 @@
             </div>
 
             <!-- スタンプグリッド -->
-            <div class="grid grid-cols-2 gap-4 sm:gap-6" id="stamp-grid">
-                <!-- JSで8個のスタンプが生成されます -->
+            <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                
+                <!-- スタンプ1 (パスを同じ階層に変更) -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_1.png" alt="ほやほや！" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_1.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">ほやほや！</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">そうそう！</p>
+                </div>
+
+                <!-- スタンプ2 -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_2.png" alt="きのどくなの" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_2.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">きのどくなの</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">ありがとう</p>
+                </div>
+
+                <!-- スタンプ3 -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_3.png" alt="おえ〜" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_3.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">おえ〜</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">嫌だ〜</p>
+                </div>
+
+                <!-- スタンプ4 -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_4.png" alt="はよしねま" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_4.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">はよしねま</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">早くして</p>
+                </div>
+
+                <!-- スタンプ5 -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_5.png" alt="だんねーよ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_5.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">だんねーよ</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">大丈夫だよ</p>
+                </div>
+
+                <!-- スタンプ6 -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_6.png" alt="ほっこりしたわ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_6.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">ほっこりしたわ</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">安心した</p>
+                </div>
+
+                <!-- スタンプ7 -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_7.png" alt="つるつるいっぱい" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_7.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">つるつるいっぱい</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">並々いっぱい</p>
+                </div>
+
+                <!-- スタンプ8 -->
+                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
+                    <img src="./stamp_8.png" alt="あかんけ" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 150 150\'%3E%3Crect width=\'150\' height=\'150\' fill=\'%23ffffff\' stroke=\'%234ade80\' stroke-width=\'4\' rx=\'20\'/%3E%3Ctext x=\'75\' y=\'75\' font-family=\'sans-serif\' font-size=\'16\' fill=\'%234ade80\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Estamp_8.png%3C/text%3E%3C/svg%3E'">
+                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">あかんけ</h3>
+                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">ダメだよ</p>
+                </div>
+
             </div>
 
             <div class="mt-8 text-center" id="buy-section">
@@ -198,7 +240,8 @@
                         <div class="flex items-end max-w-[70%]">
                              <div class="text-[10px] text-gray-100 mr-1 pb-1">既読<br>19:00</div>
                              <div class="bg-transparent rounded-2xl p-1 relative w-24 h-24">
-                                <img id="chat_img_1" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%234ade80' rx='20'/%3E%3Ctext x='50' y='50' font-family='sans-serif' font-size='16' fill='%23ffffff' font-weight='bold' text-anchor='middle' dominant-baseline='central'%3Eほやほや！%3C/text%3E%3C/svg%3E" alt="ほやほや！" class="w-full h-full object-contain drop-shadow-md">
+                                <!-- 【画像設定】 トーク画像1 (パスを同じ階層に変更) -->
+                                <img src="./chat_1.png" alt="ほやほや！" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%234ade80\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_1.png%3C/text%3E%3C/svg%3E'">
                              </div>
                         </div>
                     </div>
@@ -216,7 +259,8 @@
                         <div class="flex items-end max-w-[70%]">
                              <div class="text-[10px] text-gray-100 mr-1 pb-1">既読<br>19:05</div>
                              <div class="bg-transparent rounded-2xl p-1 relative w-24 h-24">
-                                <img id="chat_img_2" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23fbcfe8' rx='20'/%3E%3Ctext x='50' y='50' font-family='sans-serif' font-size='14' fill='%23ffffff' font-weight='bold' text-anchor='middle' dominant-baseline='central'%3Eきのどくなの%3C/text%3E%3C/svg%3E" alt="きのどくなの" class="w-full h-full object-contain drop-shadow-md">
+                                <!-- 【画像設定】 トーク画像2 -->
+                                <img src="./chat_2.png" alt="きのどくなの" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23fbcfe8\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_2.png%3C/text%3E%3C/svg%3E'">
                              </div>
                         </div>
                     </div>
@@ -234,7 +278,8 @@
                         <div class="flex items-end max-w-[70%]">
                              <div class="text-[10px] text-gray-100 mr-1 pb-1">既読<br>21:30</div>
                              <div class="bg-transparent rounded-2xl p-1 relative w-24 h-24 animate-bounce-subtle">
-                                <img id="chat_img_3" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23fca5a5' rx='20'/%3E%3Ctext x='50' y='50' font-family='sans-serif' font-size='14' fill='%23ffffff' font-weight='bold' text-anchor='middle' dominant-baseline='central'%3Eはよしねま%3C/text%3E%3C/svg%3E" alt="はよしねま" class="w-full h-full object-contain drop-shadow-md">
+                                <!-- 【画像設定】 トーク画像3 -->
+                                <img src="./chat_3.png" alt="はよしねま" class="w-full h-full object-contain drop-shadow-md" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Crect width=\'100\' height=\'100\' fill=\'%23fca5a5\' rx=\'20\'/%3E%3Ctext x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3Echat_3.png%3C/text%3E%3C/svg%3E'">
                              </div>
                         </div>
                     </div>
@@ -290,8 +335,8 @@
             </h2>
             <div class="bg-white border-4 border-green-100 rounded-3xl p-6 shadow-sm flex flex-col md:flex-row items-center gap-6">
                 <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-yellow-100 flex-shrink-0 border-4 border-white shadow-md overflow-hidden relative">
-                     <!-- プロフィール画像 -->
-                     <img id="hoya_profile_img" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect width='300' height='300' fill='%23fde047'/%3E%3Ctext x='150' y='150' font-family='sans-serif' font-size='40' fill='%23ffffff' font-weight='bold' text-anchor='middle' dominant-baseline='central'%3Eプロフ%3C/text%3E%3C/svg%3E" alt="ほやほや" class="w-full h-full object-cover">
+                     <!-- 【画像設定】 プロフィール画像 (パスを同じ階層に変更) -->
+                     <img src="./profile.png" alt="ほやほや" class="w-full h-full object-cover" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 300 300\'%3E%3Crect width=\'300\' height=\'300\' fill=\'%23fde047\'/%3E%3Ctext x=\'150\' y=\'140\' font-family=\'sans-serif\' font-size=\'24\' fill=\'%23ffffff\' font-weight=\'bold\' text-anchor=\'middle\' dominant-baseline=\'central\'%3E画像なし%3C/text%3E%3Ctext x=\'150\' y=\'170\' font-family=\'sans-serif\' font-size=\'14\' fill=\'%23ffffff\' text-anchor=\'middle\'%3E./profile.png%3C/text%3E%3C/svg%3E'">
                 </div>
                 <div class="flex-1">
                     <ul class="space-y-3 text-sm md:text-base text-gray-700 font-medium">
@@ -314,18 +359,17 @@
             </a>
         </div>
 
-        <footer class="bg-green-800 text-green-100 text-center py-6 text-sm">
+        <footer class="bg-green-800 text-green-100 text-center py-6 text-sm relative">
             <p>&copy; 2026 WEBRICH. All rights reserved.</p>
             <button onclick="showCopyright()" class="mt-2 text-green-300 hover:text-white underline text-xs">著作権について</button>
         </footer>
 
-        <!-- 右下固定購入ボタン (FAB) ラッパー: メインコンテンツ幅の右下に配置 -->
+        <!-- 右下固定購入ボタン (FAB) ラッパー -->
         <div class="fixed bottom-4 right-4 sm:right-auto sm:left-[calc(50%+16rem)] md:left-[calc(50%+20rem)] lg:left-[calc(50%+20rem)] z-40 animate-float-btn-mobile sm:translate-x-0">
             <a href="https://store.line.me/stickershop/product/XXXXXXX/ja" target="_blank" rel="noopener" class="bg-[#06C755] text-white font-bold px-4 py-2 rounded-full shadow-lg flex items-center gap-1.5 hover:bg-[#05b34c] transition border border-white text-xs sm:text-sm opacity-90 hover:opacity-100">
                 <span class="text-sm sm:text-base">🦖</span> LINEで使う
             </a>
         </div>
-
     </div>
 
     <!-- 著作権モーダル -->
@@ -342,161 +386,11 @@
         </div>
     </div>
 
-    <!-- パスワード入力モーダル -->
-    <div id="password-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="password-modal-content">
-            <h3 class="text-xl font-bold text-gray-800 mb-4 border-b pb-2">🔑 管理者ログイン</h3>
-            <p class="text-sm text-gray-600 mb-4">パスワードを入力してください</p>
-            <input type="password" id="admin-password-input" class="w-full border border-gray-300 rounded-lg px-4 py-2 mb-2 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500" placeholder="パスワード">
-            <p id="password-error" class="text-red-500 text-xs mb-4 hidden">パスワードが違います</p>
-            <div class="flex justify-end space-x-3 mt-4">
-                <button onclick="closePasswordPrompt()" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition text-sm font-bold">キャンセル</button>
-                <button onclick="checkPassword()" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition text-sm font-bold">ログイン</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 画像リセット確認モーダル -->
-    <div id="reset-confirm-modal" class="fixed inset-0 bg-black bg-opacity-50 z-[60] flex items-center justify-center hidden opacity-0 transition-opacity duration-300">
-        <div class="bg-white rounded-2xl p-6 max-w-sm w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="reset-confirm-content">
-            <h3 class="text-xl font-bold text-red-600 mb-4 border-b pb-2">⚠️ 画像の初期化</h3>
-            <p class="text-sm text-gray-600 mb-6">保存されたすべての画像をリセットして初期状態に戻しますか？<br>この操作は取り消せません。</p>
-            <div class="flex justify-end space-x-3">
-                <button onclick="closeResetConfirm()" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition text-sm font-bold">キャンセル</button>
-                <button onclick="executeReset()" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition text-sm font-bold">初期化する</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- 管理者パネル (パスワード認証後) -->
-    <div id="admin-panel" class="fixed inset-0 bg-black bg-opacity-60 z-50 overflow-y-auto">
-        <div class="min-h-screen px-4 text-center">
-            <div class="inline-block align-bottom bg-white rounded-2xl text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-2xl w-full p-6">
-                <div class="flex justify-between items-center mb-5">
-                    <h3 class="text-2xl font-bold text-gray-800">⚙️ 画像カスタマイズ (管理者用)</h3>
-                    <button onclick="closeAdmin()" class="text-gray-400 hover:text-gray-600">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-                    </button>
-                </div>
-                
-                <p class="text-sm text-gray-500 mb-6">ここで設定した画像はお使いのブラウザに一時保存され、「保存して閉じる」ボタンで画面に反映されます。</p>
-
-                <div class="space-y-6">
-                    <!-- メイン画像設定 -->
-                    <div class="bg-green-50 p-5 rounded-xl border border-green-200">
-                        <h4 class="font-bold text-green-800 mb-3 border-b border-green-200 pb-2">共通画像の設定</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">トップ画像 (大きな恐竜くん)</label>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-                                    <input type="file" accept="image/png, image/jpeg" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white file:text-green-700 file:border file:border-green-200 hover:file:bg-green-50 cursor-pointer" onchange="handleImageSelect(this, 'main-dino-img', 'preview-main')">
-                                    <img id="preview-main" class="w-12 h-12 object-contain bg-white border border-gray-200 rounded hidden" alt="プレビュー">
-                                </div>
-                                
-                                <!-- 吹き出しを隠すオプション -->
-                                <div class="mt-2">
-                                    <label class="flex items-center space-x-2 cursor-pointer">
-                                        <input type="checkbox" id="toggle-bubble-checkbox" class="form-checkbox h-4 w-4 text-green-600 rounded" onchange="handleBubbleToggle()">
-                                        <span class="text-sm text-gray-700 font-bold">トップ画像の「ほやほや！」吹き出しを隠す</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">プロフィール画像</label>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-                                    <input type="file" accept="image/png, image/jpeg" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white file:text-yellow-700 file:border file:border-yellow-200 hover:file:bg-yellow-50 cursor-pointer" onchange="handleImageSelect(this, 'profile-dino-img', 'preview-profile')">
-                                    <img id="preview-profile" class="w-12 h-12 object-contain bg-white border border-gray-200 rounded hidden" alt="プレビュー">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- トーク画面用画像設定 -->
-                    <div class="bg-blue-50 p-5 rounded-xl border border-blue-200">
-                        <h4 class="font-bold text-blue-800 mb-3 border-b border-blue-200 pb-2">トーク画面(使用イメージ)画像の設定</h4>
-                        <div class="space-y-4">
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">トーク画像1 (ほやほや！)</label>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-                                    <input type="file" accept="image/png, image/jpeg" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white file:text-blue-700 file:border file:border-blue-200 hover:file:bg-blue-50 cursor-pointer" onchange="handleImageSelect(this, 'chat-img-1-storage', 'preview-chat-1')">
-                                    <img id="preview-chat-1" class="w-12 h-12 object-contain bg-white border border-gray-200 rounded hidden" alt="プレビュー">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">トーク画像2 (きのどくなの)</label>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-                                    <input type="file" accept="image/png, image/jpeg" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white file:text-blue-700 file:border file:border-blue-200 hover:file:bg-blue-50 cursor-pointer" onchange="handleImageSelect(this, 'chat-img-2-storage', 'preview-chat-2')">
-                                    <img id="preview-chat-2" class="w-12 h-12 object-contain bg-white border border-gray-200 rounded hidden" alt="プレビュー">
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-bold text-gray-700 mb-2">トーク画像3 (はよしねま)</label>
-                                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-                                    <input type="file" accept="image/png, image/jpeg" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-white file:text-blue-700 file:border file:border-blue-200 hover:file:bg-blue-50 cursor-pointer" onchange="handleImageSelect(this, 'chat-img-3-storage', 'preview-chat-3')">
-                                    <img id="preview-chat-3" class="w-12 h-12 object-contain bg-white border border-gray-200 rounded hidden" alt="プレビュー">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- スタンプ画像設定 (上位8個) -->
-                    <div class="bg-gray-50 p-5 rounded-xl border border-gray-200">
-                        <h4 class="font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2 flex justify-between items-center">
-                            スタンプ画像の設定 (人気8個)
-                            <span class="text-xs font-normal text-gray-500">※一覧に表示される8個です</span>
-                        </h4>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="admin-stamps-list">
-                            <!-- JSで生成されます -->
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-8 pt-5 border-t border-gray-200 flex justify-between items-center">
-                    <button onclick="resetImages()" class="text-red-500 text-sm hover:underline font-bold">画像を初期化する</button>
-                    <div class="space-x-2">
-                        <button onclick="closeAdmin()" class="bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2 px-4 rounded-lg shadow-sm transition">キャンセル</button>
-                        <button onclick="saveChangesAndClose()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg shadow transition">保存して閉じる</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- スクリプト (フェードインアニメーションとモーダル制御のみ) -->
     <script>
-        // 一時保存用オブジェクト
-        let pendingChanges = {
-            images: {},
-            hideBubble: null
-        };
-
-        // 厳選した人気の8個のデータ
-        const popularStamps = [
-            { id: 's1', txt: 'ほやほや！',  meaning: 'そうそう！' },
-            { id: 's2', txt: 'きのどくなの', meaning: 'ありがとう' },
-            { id: 's3', txt: 'おえ〜',   meaning: '嫌だ〜' },
-            { id: 's4', txt: 'はよしねま', meaning: '早くして' },
-            { id: 's5', txt: 'だんねーよ',   meaning: '大丈夫だよ' },
-            { id: 's6', txt: 'ほっこりしたわ', meaning: '安心した' },
-            { id: 's7', txt: 'つるつるいっぱい',      meaning: '並々いっぱい' },
-            { id: 's8', txt: 'あかんけ', meaning: 'ダメだよ' }
-        ];
-
-        // 初期化処理
+        // フェードインアニメーションの初期化
         window.onload = () => {
-            renderStamps();
-            renderAdminStamps();
-            restoreSavedImages();
-            initScrollAnimation(); // ゆず追加：スクロールアニメーション初期化
-        };
-
-        // ゆず追加：スクロールアニメーションの設定
-        function initScrollAnimation() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -510,267 +404,24 @@
                 el.classList.add('fade-in');
                 observer.observe(el);
             });
-        }
+        };
 
-        // スタンプ一覧の描画
-        function renderStamps() {
-            const container = document.getElementById('stamp-grid');
-            container.innerHTML = popularStamps.map((stamp, index) => {
-                // 保存された画像があればそれを、なければプレースホルダーを使用
-                const savedImg = localStorage.getItem(`stamp-img-${stamp.id}`);
-                const svgData = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 150'%3E%3Crect width='150' height='150' fill='%23ffffff' stroke='%234ade80' stroke-width='4' rx='20'/%3E%3Ctext x='75' y='75' font-family='sans-serif' font-size='20' fill='%234ade80' font-weight='bold' text-anchor='middle' dominant-baseline='central'%3E${encodeURIComponent(stamp.txt)}%3C/text%3E%3C/svg%3E`;
-                const imgSrc = savedImg ? savedImg : svgData;
-                
-                return `
-                <div class="bg-white p-4 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center text-center hover:shadow-md transition">
-                    <img id="stamp_display_${stamp.id}" src="${imgSrc}" alt="${stamp.txt}" class="w-24 h-24 sm:w-28 sm:h-28 object-contain mb-3 drop-shadow-sm">
-                    <h3 class="font-bold text-gray-800 text-sm sm:text-base">${stamp.txt}</h3>
-                    <p class="text-xs text-gray-500 mt-1 bg-gray-100 px-2 py-1 rounded-full">${stamp.meaning}</p>
-                </div>
-                `;
-            }).join('');
-        }
-
-        // 管理画面のスタンプ入力欄の描画
-        function renderAdminStamps() {
-            const container = document.getElementById('admin-stamps-list');
-            container.innerHTML = popularStamps.map(stamp => `
-                <div class="border border-gray-200 p-3 rounded-lg bg-white">
-                    <label class="block text-xs font-bold text-gray-700 mb-1">${stamp.txt} (${stamp.meaning})</label>
-                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
-                        <input type="file" accept="image/png, image/jpeg" 
-                               class="block w-full text-xs text-gray-500 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:font-semibold file:bg-gray-100 file:text-gray-700 hover:file:bg-gray-200 cursor-pointer" 
-                               onchange="handleImageSelect(this, 'stamp-img-${stamp.id}', 'preview-stamp-${stamp.id}')">
-                        <img id="preview-stamp-${stamp.id}" class="w-8 h-8 object-contain bg-white border border-gray-200 rounded hidden" alt="プレビュー">
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // ゆず修正：画像選択時の処理（自動リサイズ＆圧縮処理を追加）
-        function handleImageSelect(input, storageKey, previewId) {
-            const file = input.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const img = new Image();
-                    img.onload = function() {
-                        // 最大サイズを500pxに設定し、容量を節約
-                        const MAX_WIDTH = 500;
-                        const MAX_HEIGHT = 500;
-                        let width = img.width;
-                        let height = img.height;
-
-                        if (width > height) {
-                            if (width > MAX_WIDTH) {
-                                height *= MAX_WIDTH / width;
-                                width = MAX_WIDTH;
-                            }
-                        } else {
-                            if (height > MAX_HEIGHT) {
-                                width *= MAX_HEIGHT / height;
-                                height = MAX_HEIGHT;
-                            }
-                        }
-
-                        // Canvasを使ってリサイズ
-                        const canvas = document.createElement('canvas');
-                        canvas.width = width;
-                        canvas.height = height;
-                        const ctx = canvas.getContext('2d');
-                        ctx.drawImage(img, 0, 0, width, height);
-
-                        // JPEG形式で圧縮率0.8でData URLに変換 (容量削減のキモ)
-                        const resizedDataUrl = canvas.toDataURL('image/jpeg', 0.8);
-
-                        // プレビュー画像を表示
-                        const previewEl = document.getElementById(previewId);
-                        if (previewEl) {
-                            previewEl.src = resizedDataUrl;
-                            previewEl.classList.remove('hidden');
-                        }
-                        // 変更を一時保存
-                        pendingChanges.images[storageKey] = resizedDataUrl;
-                    }
-                    img.src = e.target.result;
-                }
-                reader.readAsDataURL(file);
-            }
-        }
-
-        // 吹き出しチェックボックスの処理（一時保存）
-        function handleBubbleToggle() {
-            const isChecked = document.getElementById('toggle-bubble-checkbox').checked;
-            pendingChanges.hideBubble = isChecked;
-        }
-
-        // 変更を保存して閉じる
-        function saveChangesAndClose() {
-            try {
-                // 画像の保存
-                for (const [key, dataUrl] of Object.entries(pendingChanges.images)) {
-                    localStorage.setItem(key, dataUrl);
-                    
-                    // 画面上の対象IDを推測して更新
-                    let imgId = null;
-                    if(key === 'main-dino-img') imgId = 'hoya_main_img';
-                    else if(key === 'profile-dino-img') imgId = 'hoya_profile_img';
-                    else if(key === 'chat-img-1-storage') imgId = 'chat_img_1';
-                    else if(key === 'chat-img-2-storage') imgId = 'chat_img_2';
-                    else if(key === 'chat-img-3-storage') imgId = 'chat_img_3';
-                    else if(key.startsWith('stamp-img-')) {
-                        const stampId = key.replace('stamp-img-', '');
-                        imgId = `stamp_display_${stampId}`;
-                    }
-                    
-                    if (imgId) {
-                        const el = document.getElementById(imgId);
-                        if(el) el.src = dataUrl;
-                    }
-                }
-
-                // 吹き出し状態の保存
-                if (pendingChanges.hideBubble !== null) {
-                    localStorage.setItem('hide-main-bubble', pendingChanges.hideBubble);
-                    const bubbleEl = document.getElementById('hoya_speech_bubble');
-                    if (bubbleEl) {
-                        bubbleEl.style.display = pendingChanges.hideBubble ? 'none' : 'block';
-                    }
-                }
-
-                // 一時保存をクリア
-                pendingChanges = { images: {}, hideBubble: null };
-                
-                // パネルを閉じる
-                document.getElementById('admin-panel').classList.remove('active');
-
-            } catch (e) {
-                // 容量オーバー時のエラーハンドリング
-                if (e.name === 'QuotaExceededError' || e.code === 22) {
-                    alert('保存容量の限界を超えました。リセットしてから再度お試しいただくか、アップロードする画像を減らしてください。');
-                } else {
-                    console.error("保存中にエラーが発生しました:", e);
-                }
-            }
-        }
-
-        // 画像の復元処理（初期読み込み時）
-        function restoreSavedImages() {
-            const mainImg = localStorage.getItem('main-dino-img');
-            if(mainImg) document.getElementById('hoya_main_img').src = mainImg;
-            
-            const profileImg = localStorage.getItem('profile-dino-img');
-            if(profileImg) document.getElementById('hoya_profile_img').src = profileImg;
-
-            // 吹き出しの表示状態を復元
-            const hideBubble = localStorage.getItem('hide-main-bubble') === 'true';
-            const bubbleCheckbox = document.getElementById('toggle-bubble-checkbox');
-            const bubbleEl = document.getElementById('hoya_speech_bubble');
-            if (bubbleCheckbox && bubbleEl) {
-                bubbleCheckbox.checked = hideBubble;
-                bubbleEl.style.display = hideBubble ? 'none' : 'block';
-            }
-
-            // トーク画面画像の復元
-            const chatImg1 = localStorage.getItem('chat-img-1-storage');
-            if(chatImg1) document.getElementById('chat_img_1').src = chatImg1;
-            
-            const chatImg2 = localStorage.getItem('chat-img-2-storage');
-            if(chatImg2) document.getElementById('chat_img_2').src = chatImg2;
-            
-            const chatImg3 = localStorage.getItem('chat-img-3-storage');
-            if(chatImg3) document.getElementById('chat_img_3').src = chatImg3;
-        }
-
-        // パスワードプロンプト（カスタムモーダル版）
-        function openPasswordPrompt() {
-            const modal = document.getElementById('password-modal');
-            const content = document.getElementById('password-modal-content');
-            document.getElementById('admin-password-input').value = '';
-            document.getElementById('password-error').classList.add('hidden');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                content.classList.remove('scale-95');
-                document.getElementById('admin-password-input').focus();
-            }, 10);
-        }
-
-        function closePasswordPrompt() {
-            const modal = document.getElementById('password-modal');
-            const content = document.getElementById('password-modal-content');
-            modal.classList.add('opacity-0');
-            content.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        function checkPassword() {
-            const pass = document.getElementById('admin-password-input').value;
-            if (pass === 'fukui@2026') {
-                closePasswordPrompt();
-                
-                // パネルを開く前に、現在のチェックボックスの状態をlocalStorageから取得して設定
-                const hideBubble = localStorage.getItem('hide-main-bubble') === 'true';
-                document.getElementById('toggle-bubble-checkbox').checked = hideBubble;
-                
-                document.getElementById('admin-panel').classList.add('active');
-            } else {
-                document.getElementById('password-error').classList.remove('hidden');
-            }
-        }
-
-        function closeAdmin() {
-            // 一時保存を破棄して閉じる
-            pendingChanges = { images: {}, hideBubble: null };
-            document.getElementById('admin-panel').classList.remove('active');
-        }
-
-        // 全リセット（カスタムモーダル版）
-        function resetImages() {
-            const modal = document.getElementById('reset-confirm-modal');
-            const content = document.getElementById('reset-confirm-content');
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                content.classList.remove('scale-95');
-            }, 10);
-        }
-
-        function closeResetConfirm() {
-            const modal = document.getElementById('reset-confirm-modal');
-            const content = document.getElementById('reset-confirm-content');
-            modal.classList.add('opacity-0');
-            content.classList.add('scale-95');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-
-        function executeReset() {
-            localStorage.clear();
-            location.reload();
-        }
-
-        // 著作権モーダル制御
-        function showCopyright() {
+        // 著作権モーダルの制御
+        window.showCopyright = function() {
             const modal = document.getElementById('copyright-modal');
             const content = document.getElementById('copyright-modal-content');
             modal.classList.remove('hidden');
-            // 少し遅れてopacityを上げることでフェードインさせる
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 content.classList.remove('scale-95');
             }, 10);
         }
 
-        function closeCopyright() {
+        window.closeCopyright = function() {
             const modal = document.getElementById('copyright-modal');
             const content = document.getElementById('copyright-modal-content');
             modal.classList.add('opacity-0');
             content.classList.add('scale-95');
-            // アニメーションが終わってからhiddenにする
             setTimeout(() => {
                 modal.classList.add('hidden');
             }, 300);
