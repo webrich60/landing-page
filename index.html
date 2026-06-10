@@ -43,6 +43,26 @@
             }
         }
         
+        /* バナー全体が飛び出してくるアニメーション */
+        @keyframes pop-in {
+            0% { transform: translateX(-50px); opacity: 0; }
+            15% { transform: translateX(10px); opacity: 1; }
+            25%, 100% { transform: translateX(0); opacity: 1; }
+        }
+        .animate-pop-in {
+            animation: pop-in 4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+        }
+
+        /* 恐竜くんが文字を置いて飛び去るアニメーション */
+        @keyframes dino-fade {
+            0%, 40% { opacity: 1; transform: translateY(-50%) scale(1) rotate(0deg); }
+            60%, 100% { opacity: 0; transform: translateY(-150%) scale(0.5) rotate(15deg); }
+        }
+        .animate-dino-fade {
+            /* top-1/2 で配置するため、Y軸の中央寄せ(-50%)を基準に動かします */
+            animation: dino-fade 4s ease-in-out forwards;
+        }
+
         .speech-bubble::after {
             content: '';
             position: absolute;
@@ -80,8 +100,19 @@
 </head>
 <body class="antialiased">
 
-    <div class="bg-yellow-400 text-yellow-900 text-center py-3 px-4 font-bold text-sm sm:text-base shadow-md relative z-20">
-        <p>あなたの福井愛は本物？</p>
+    <!-- トップバナー（恐竜くんアニメーション） -->
+    <div class="bg-gradient-to-r from-yellow-400 via-yellow-300 to-yellow-400 text-yellow-900 text-center py-3 px-4 shadow-md relative z-20 overflow-hidden">
+        <div class="inline-flex relative items-center justify-center animate-pop-in text-sm sm:text-base">
+            <!-- 恐竜くん（途中でフェードアウト） -->
+            <div class="absolute -left-10 sm:-left-12 top-1/2 animate-dino-fade">
+                <!-- 画像がない場合は onerror で恐竜の絵文字に切り替わります -->
+                <img src="./kyouryu_01.jpeg" alt="恐竜くん" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full mix-blend-multiply object-cover" onerror="this.outerHTML='<span class=\'text-2xl sm:text-3xl\'>🦖</span>'">
+            </div>
+            <!-- 文字（残る） -->
+            <p class="font-bold tracking-wide relative z-10">
+                ✨ ゆるかわ福井弁スタンプ <span class="text-red-600 text-base sm:text-lg">絶賛販売中！</span> ✨
+            </p>
+        </div>
     </div>
 
     <div class="max-w-2xl mx-auto bg-white min-h-screen shadow-2xl relative overflow-hidden">
@@ -180,8 +211,8 @@
 
             <div class="mt-8 text-center" id="buy-section">
                 <p class="text-lg font-bold text-green-700 mb-4">
-                    LINEで毎日使える40種類以上✨ <span class="text-sm font-normal text-gray-600">（一部同じ言葉あり）</span><br>
-                    <span class="text-sm text-gray-500">（第2弾も制作中！）</span>
+                    LINEで毎日使える60種類以上✨ <span class="text-sm font-normal text-gray-600">（一部同じ言葉あり）</span><br>
+                    <span class="text-sm font-normal text-gray-500">あいさつ・仕事・恋愛・リアクション・シュール・グルメ編など随時作成中</span>
                 </p>
                 
                 <ul class="text-left inline-block space-y-2 mb-6 font-bold text-gray-700 bg-white p-4 rounded-xl border border-gray-100 shadow-sm">
@@ -318,7 +349,8 @@
 
         <div class="py-12 text-center px-6 bg-gradient-to-b from-transparent to-green-50 fade-in-target">
             <p class="text-xl font-bold text-gray-800 mb-2">福井県の魅力が詰まった</p>
-            <p class="text-lg text-gray-600 font-bold mb-6">ゆるかわ恐竜スタンプ 40種類以上 <span class="text-sm font-normal text-gray-500">（一部同じ言葉あり）</span></p>
+            <p class="text-lg text-gray-600 font-bold mb-2">ゆるかわ恐竜スタンプ 60種類以上 <span class="text-sm font-normal text-gray-500">（一部同じ言葉あり）</span></p>
+            <p class="text-sm text-gray-500 mb-6">あいさつ・仕事・恋愛・リアクション・シュール・グルメ編など随時作成中</p>
             <a href="https://store.line.me/stickershop/product/XXXXXXX/ja" target="_blank" rel="noopener" class="inline-flex items-center justify-center bg-[#06C755] hover:bg-[#05b34c] text-white font-bold text-xl py-5 px-12 rounded-full transition shadow-xl transform hover:scale-105 w-full sm:w-auto">
                 <span class="mr-2 text-3xl">🦖</span>LINEで使う
             </a>
